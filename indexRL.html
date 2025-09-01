@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Least to Greatest App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="row image-row" id="imageRow"></div>
+    <div class="row square-row" id="squareRow"></div>
+    <div class="row label-row">
+      <span>ORDER</span>
+      <span>THEM</span>
+      <span>FROM</span>
+      <span>LEAST</span>
+      <span>TO</span>
+      <span>GREATEST</span>
+    </div>
+    <div class="row control-row">
+      <button id="pauseBtn" onclick="pause()">PAUSE</button>
+      <div class="counter-frame">
+        <span id="counter">0</span>
+      </div>
+      <button onclick="reset()">RESET</button>
+    </div>
+  </div>
+  <script src="scriptRL.js"></script>
+</body>
+</html>

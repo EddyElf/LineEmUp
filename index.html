@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Line 'Em Up</title>
+  <style>
+    
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: #bfff91;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    .app-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      padding: 3vh 3vw;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .row.title-row h1 {
+      font-size: 5vh;
+      color: hotpink;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .row.title-row h1 span.larger-line {
+      font-size: 12vh;
+      display: inline-block;
+      margin-top: 0.2em;
+    }
+
+    .row.instructions-row p {
+      font-size: 3vh;
+      line-height: 1.5;
+      max-width: 80vw;
+      margin: 0;
+    }
+
+    .control-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 4vw;
+    }
+
+    .control-row button {
+      background-color: hotpink;
+      color: #bfff91;
+      font-size: clamp(4vh, 4vw, 6vh);
+      font-weight: bold;
+      border: none;
+      border-radius: 1vh;
+      padding: 2vh 4vw;
+      cursor: pointer;
+      min-width: 20ch;
+      white-space: nowrap;
+      box-sizing: border-box;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .control-row button:hover {
+      background-color: #bfff91;
+      color: hotpink;
+      transform: scale(1.05);
+    }
+
+    @media (max-aspect-ratio: 1/1) {
+      .app-container {
+        display: none;
+      }
+
+      body::before {
+        content: "Please rotate your device to landscape mode.";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: black;
+        color: hotpink;
+        font-size: 5vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 5vw;
+      }
+    }
+    #countdown-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  color: hotpink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-size: 45vh;
+  font-weight: bold;
+}
+#countdown-number {
+  color: hotpink; /* pink fill */
+  font-weight: bold;
+  /* outline using text shadows with viewport units */
+  text-shadow:
+    -0.4vh -0.4vh 0 #bfff91,
+    0.4vh -0.4vh 0 #bfff91,
+    -0.4vh 0.4vh 0 #bfff91,
+    0.4vh 0.4vh 0 #bfff91,
+    0 0.4vh 0 #bfff91,
+    0 -0.4vh 0 #bfff91,
+    0.4vh 0 0 #bfff91,
+    -0.4vh 0 0 #bfff91;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <div class="row title-row">
+      <h1>
+        An Educator's Little Friend Presents:<br>
+        <span class="larger-line">"Line 'Em Up"</span>
+      </h1>
+    </div>
+
+    <div class="row instructions-row">
+      <p>
+        <span style="font-weight: bold; color: #bfff91; font-size: 4vh;">
+          You will see 7 different values.<br>
+          Your task is to arrange them in order from LEAST to GREATEST.<br>
+          Drag and drop each value into the colored squares.<br>
+          The line goes from smallest on the far left to the largest on the far right.<br><br>
+        </span>
+        <span style="font-weight: bold; color: hotpink; font-size: 4vh;">
+          CHOOSE HOW YOU WISH TO PROCEED.
+        </span>
+      </p>
+    </div>
+
+    <div class="control-row">
+      <!-- These buttons now trigger the sound and delay -->
+      <button onclick="playSoundAndGo('indexRL.html')">RANDOM VALUES</button>
+      <button onclick="playSoundAndGo('indexFL.html')">FRACTIONS ONLY</button>
+    </div>
+  </div>
+
+  <!-- Hidden audio element for race start sound -->
+  <audio id="raceStartSound" src="racestart.mp3" preload="auto"></audio>
+
+<script>
+  function playSoundAndGo(url) {
+    const audio = document.getElementById('raceStartSound');
+    const overlay = document.getElementById('countdown-overlay');
+    const number = document.getElementById('countdown-number');
+
+    // Start audio
+    audio.currentTime = 0;
+    audio.play();
+
+    // Show overlay and initialize
+    overlay.style.display = 'flex';
+    number.textContent = '3';
+
+    // Schedule updates to match audio
+    setTimeout(() => number.textContent = '2', 1000);
+    setTimeout(() => number.textContent = '1', 2000);
+    setTimeout(() => number.textContent = 'GO!', 3000);
+
+    // After the full 4 seconds, redirect
+    setTimeout(() => {
+      window.location.href = url;
+    }, 4000);
+  }
+</script>
+
+
+
+  <div id="countdown-overlay" style="display: none;">
+  <div id="countdown-number">3</div>
+</div>
+
+</body>
+</html>

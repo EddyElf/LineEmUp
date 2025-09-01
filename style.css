@@ -1,0 +1,186 @@
+/* Ensure fullscreen and landscape orientation */
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+/* Main container fills the screen and spaces rows vertically */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2vh;
+  box-sizing: border-box;
+}
+
+/* Each row stretches full width and distributes its content evenly */
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  flex: 1; /* Ensures rows share space equally */
+
+  /*Remove default spacing between rows */
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive image size based on viewport height */
+.image-row img {
+  cursor: grab;
+  flex: 1;
+  aspect-ratio: 1 / 1;
+  max-width: 10vw;       /* Slightly smaller than the 12vw used for squares */
+  object-fit: cover;     /* Ensures the image fills its box without stretching */
+  padding: 0.5vw;        /* Optional: creates visual space inside the image box */
+  box-sizing: border-box;
+}
+
+.image-row img.dragover {
+  border: 2px dashed #bfff91; /* light green dashed border */
+  filter: brightness(1.2);    /* slightly brighten */
+}
+
+/* Square row: fills width with square divs */
+.square-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: .5vw; /* space between squares */
+  width: 100%;
+  padding: 0 1vw;
+  box-sizing: border-box;
+
+  /*Remove space below the square row */
+  margin-bottom: 0;
+}
+
+.square-row div {
+  flex: 1;                  /* Each square tries to fill equal space */
+  aspect-ratio: 1 / 1;      /* Keeps it square */
+  max-width: 12vw;          /* Prevents it from becoming too wide on large screens */
+  background-color: gray;   /* Default color for visibility */
+}
+
+/* For the row of squares above this, reduce bottom margin if needed */
+.row.squares-row {
+  margin-bottom: 0.5vh; /* Adjust or remove entirely */
+}
+
+/* Label row container */
+.label-row {
+  display: flex;
+  justify-content: space-evenly; /* Spreads the spans across the row */
+  align-items: center;
+
+  /*Pull label row closer to square row */
+  margin-top: 0.5vh;      /* Minimal space between square and label */
+  margin-bottom: 1.5vh;   /* Small space below */
+  padding: 0;
+
+  flex: 0 0 auto; /* Make label row height fit content, not flex-grow */
+
+}
+
+/* Label text */
+.label-row span {
+  font-size: 4vh;/* Large, responsive text */
+  font-family: 'Arial', sans-serif; /* Serif font */
+  color: #bfff91;
+  font-weight: bold;
+}
+
+/* Control row container with flexible wrapping and spacing */
+.control-row {
+  display: flex;
+  flex-wrap: wrap;               /* Allow items to wrap on narrow screens */
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;                     /* Increased gap for better spacing */
+  min-width: 0;                 /* Allow flex children to shrink */
+  overflow: hidden;             /* Prevent overflow */
+  padding: 1vh 0;
+  min-height: 6vh;
+  box-sizing: border-box;
+}
+
+/* Pink score box container */
+.counter-frame {
+  flex-shrink: 0;
+  width: 72ch;
+  max-width: 40vw;
+  height: 100%;
+  padding: 0 1.5vw;             /* Slightly increased horizontal padding */
+  border: 1.8vh solid hotpink;
+  border-radius: 1vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-right: 3vw;            /* Add margin to separate from buttons */
+}
+
+/* Number inside the pink score box */
+#counter {
+  font-size: clamp(18vh, 8vw, 24vh);  /* Larger minimum font size */
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  color: #bfff91;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Control row buttons */
+.control-row button {
+  background-color: hotpink;
+  color: #bfff91;
+  font-size: clamp(6vh, 4vw, 9vh);    /* Larger minimum font size */
+  font-weight: bold;
+  border: none;
+  border-radius: 1vh;
+  padding: clamp(3vh, 2vw, 6vh) clamp(2vw, 1.5vw, 3vw); /* Increased padding */
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 1;
+  min-width: 8ch;
+  box-sizing: border-box;
+}
+
+img.group-image {
+  max-width: 10vw;
+  max-height: 10vw;
+  width: auto;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  box-sizing: border-box;
+}
+
+.square-row div {
+  /* Existing styles... */
+  display: flex;
+  justify-content: center;
+  align-items: center;  /* <-- Add this line to vertically center content */
+  overflow: hidden;     /* Optional: keeps anything from spilling out */
+}
+
+.locked {
+  pointer-events: none;     /* Prevent further interaction */
+  -webkit-user-drag: none;  /* Safari: prevent dragging */
+  user-select: none;        /* Prevent highlight */
+}
+

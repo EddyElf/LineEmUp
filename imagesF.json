@@ -1,0 +1,230 @@
+{
+  "game2": {
+    "groups": [
+      {
+        "groupId": "A",
+        "sets": [
+          {
+            "equivalenceId": "01",
+            "items": [
+              { "type": "fraction", "image": "balls/bf01.png" }
+            ]
+          },
+          {
+            "equivalenceId": "02",
+            "items": [
+              { "type": "fraction", "image": "balls/bf02.png" }
+            ]
+          },
+          {
+            "equivalenceId": "03",
+            "items": [
+              { "type": "fraction", "image": "balls/bf03.png" }
+            ]
+          },
+          {
+            "equivalenceId": "04",
+            "items": [
+              { "type": "fraction", "image": "balls/bf04.png" }
+            ]
+          },
+          {
+            "equivalenceId": "05",
+            "items": [
+              { "type": "fraction", "image": "balls/bf05.png" }
+            ]
+          }
+        ]
+      },
+      {
+        "groupId": "B",
+        "sets": [
+          {
+            "equivalenceId": "06",
+            "items": [
+              { "type": "fraction", "image": "balls/bf06.png" }
+            ]
+          },
+          {
+            "equivalenceId": "07",
+            "items": [
+              { "type": "fraction", "image": "balls/bf07.png" }
+            ]
+          },
+          {
+            "equivalenceId": "08",
+            "items": [
+              { "type": "fraction", "image": "balls/bf08.png" }
+            ]
+          },
+          {
+            "equivalenceId": "09",
+            "items": [
+              { "type": "fraction", "image": "balls/bf09.png" }
+            ]
+          },
+          {
+            "equivalenceId": "10",
+            "items": [
+              { "type": "fraction", "image": "balls/bf10.png" }
+            ]
+          }
+        ]
+      },
+      {
+        "groupId": "C",
+        "sets": [
+          {
+            "equivalenceId": "11",
+            "items": [
+              { "type": "fraction", "image": "balls/bf11.png" }
+            ]
+          },
+          {
+            "equivalenceId": "12",
+            "items": [
+              { "type": "fraction", "image": "balls/bf12.png" }
+            ]
+          },
+          {
+            "equivalenceId": "13",
+            "items": [
+              { "type": "fraction", "image": "balls/bf13.png" }
+            ]
+          },
+          {
+            "equivalenceId": "14",
+            "items": [
+              { "type": "fraction", "image": "balls/bf14.png" }
+            ]
+          },
+          {
+            "equivalenceId": "15",
+            "items": [
+              { "type": "fraction", "image": "balls/bf15.png" }
+            ]
+          }
+        ]
+      },
+      {
+        "groupId": "D",
+        "sets": [
+          {
+            "equivalenceId": "16",
+            "items": [
+              { "type": "fraction", "image": "balls/bf16.png" }
+            ]
+          },
+          {
+            "equivalenceId": "17",
+            "items": [
+              { "type": "fraction", "image": "balls/bf17.png" }
+            ]
+          },
+          {
+            "equivalenceId": "18",
+            "items": [
+              { "type": "fraction", "image": "balls/bf18.png" }
+            ]
+          },
+          {
+            "equivalenceId": "19",
+            "items": [
+              { "type": "fraction", "image": "balls/bf19.png" }
+            ]
+          },
+          {
+            "equivalenceId": "20",
+            "items": [
+              { "type": "fraction", "image": "balls/bf20.png" }
+            ]
+          }
+        ]
+      },
+      {
+        "groupId": "E",
+        "sets": [
+          {
+            "equivalenceId": "21",
+            "items": [
+              { "type": "fraction", "image": "balls/bf21.png" }
+            ]
+          },
+          {
+            "equivalenceId": "22",
+            "items": [
+              { "type": "fraction", "image": "balls/bf22.png" }
+            ]
+          },
+          {
+            "equivalenceId": "23",
+            "items": [
+              { "type": "fraction", "image": "balls/bf23.png" }
+            ]
+          },
+          {
+            "equivalenceId": "24",
+            "items": [
+              { "type": "fraction", "image": "balls/bf24.png" }
+            ]
+          },
+          {
+            "equivalenceId": "25",
+            "items": [
+              { "type": "fraction", "image": "balls/bf25.png" }
+            ]
+          }
+        ]
+      },
+ {
+        "groupId": "F",
+        "sets": [
+          {
+            "equivalenceId": "26",
+            "items": [
+              { "type": "fraction", "image": "balls/bf26.png" }
+            ]
+          },
+          {
+            "equivalenceId": "27",
+            "items": [
+              { "type": "fraction", "image": "balls/bf27.png" }
+            ]
+          },
+          {
+            "equivalenceId": "28",
+            "items": [
+              { "type": "fraction", "image": "balls/bf28.png" }
+            ]
+          },
+          {
+            "equivalenceId": "29",
+            "items": [
+              { "type": "fraction", "image": "balls/bf29.png" }
+            ]
+          },
+          {
+            "equivalenceId": "30",
+            "items": [
+              { "type": "fraction", "image": "balls/bf30.png" }
+            ]
+          }
+        ]
+      },
+      {
+        "groupId": "half",
+        "sets": [
+          {
+            "equivalenceId": "half",
+            "items": [
+              {
+                "type": "fraction",
+                "image": "balls/bfhalf.png"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
