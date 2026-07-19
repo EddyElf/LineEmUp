@@ -5,6 +5,7 @@ body, html {
   background-color: black;
   color: white;
   height: 100vh;
+  height: 100dvh; /* Dynamically subtracts mobile browser address/nav bars */
   width: 100vw;
   overflow: hidden;
   font-family: sans-serif;
@@ -100,17 +101,17 @@ body, html {
   font-weight: bold;
 }
 
-/* Control row container with flexible wrapping and spacing */
+/* Control row container */
 .control-row {
   display: flex;
-  flex-wrap: wrap;               /* Allow items to wrap on narrow screens */
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 3vw;                     /* Increased gap for better spacing */
-  min-width: 0;                 /* Allow flex children to shrink */
-  overflow: hidden;             /* Prevent overflow */
-  padding: 1vh 0;
-  min-height: 6vh;
+  gap: 2vw;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0.5vh 0;
+  flex: 1; /* Allow it to share flex space properly */
   box-sizing: border-box;
 }
 
@@ -118,10 +119,10 @@ body, html {
 .counter-frame {
   flex-shrink: 0;
   width: 72ch;
-  max-width: 40vw;
-  height: 100%;
-  padding: 0 1.5vw;             /* Slightly increased horizontal padding */
-  border: 1.8vh solid hotpink;
+  max-width: 35vw;
+  height: 80%; /* Don't force a strict vertical constraint */
+  padding: 0 1.5vw;
+  border: 0.6vh solid hotpink; /* Scaled down from 1.8vh */
   border-radius: 1vh;
   display: flex;
   justify-content: center;
@@ -129,12 +130,12 @@ body, html {
   box-sizing: border-box;
   white-space: nowrap;
   overflow: hidden;
-  margin-right: 3vw;            /* Add margin to separate from buttons */
+  margin-right: 2vw;
 }
 
 /* Number inside the pink score box */
 #counter {
-  font-size: clamp(18vh, 8vw, 24vh);  /* Larger minimum font size */
+  font-size: clamp(6vh, 6vw, 10vh);  /* Tamed down from 18vh-24vh */
   font-weight: bold;
   font-family: 'Arial', sans-serif;
   color: #bfff91;
@@ -148,18 +149,17 @@ body, html {
 .control-row button {
   background-color: hotpink;
   color: #bfff91;
-  font-size: clamp(6vh, 4vw, 9vh);    /* Larger minimum font size */
+  font-size: clamp(3vh, 3vw, 5vh);    /* Tamed down from 6vh-9vh */
   font-weight: bold;
   border: none;
   border-radius: 1vh;
-  padding: clamp(3vh, 2vw, 6vh) clamp(2vw, 1.5vw, 3vw); /* Increased padding */
+  padding: clamp(1vh, 1.5vw, 2vh) clamp(2vw, 1.5vw, 3vw); /* Balanced vertical padding */
   cursor: pointer;
   white-space: nowrap;
   flex-shrink: 1;
   min-width: 8ch;
   box-sizing: border-box;
 }
-
 img.group-image {
   max-width: 10vw;
   max-height: 10vw;
